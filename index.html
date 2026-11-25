@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Budget Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app">
+        <header>
+            <h1>My Budget Tracker</h1>
+            <p>Set a budget and keep track of your spending.</p>
+        </header>
+
+        <section style="background-color: green;">
+            <h2>Set your budget</h2>
+            <form id="budget-form">
+                <label for="budget-amount">How much can you spend?</label>
+                <div class="form-row">
+                    <input id="budget-amount" type="number"  placeholder="Enter an amount" required>
+                    <button type="submit" style="background-color: white;color: green;font-size: 20px;">Save budget</button>
+                </div>
+            </form>
+
+            <div id="budget-summary" hidden>
+                <p>Budget: <span id="budget-total">$0.00</span></p> <br> <br>
+                <p>Spent: <span id="spent-total">$0.00</span></p> <br> <br>
+                <p>Left: <span id="remaining-amount">$0.00</span></p> <br> <br>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <p id="budget-note"></p>
+            </div>
+        </section>
+
+        <section style="background-color: green;">
+            <h2>Your expenses</h2>
+            <form id="expense-form">
+                <label for="expense-name">What did you spend on?</label>
+                <input id="expense-name" type="text" placeholder="For example, lunch" required>
+
+                <label for="expense-amount">How much did you spend?</label>
+                <div class="form-row">
+                    <input id="expense-amount" type="number" min="0.01" step="0.01" placeholder="Enter an amount" required>
+                    <button type="submit" style="background-color: white;color: green;font-size: 20px;">Add expense</button>
+                </div>
+            </form>
+
+            <p id="form-message" role="status"></p>
+            <p id="empty-state">No expenses added yet.</p>
+            <ul id="expense-list"></ul>
+        </section>
+    </main>
+    <footer style="color: green;margin-left: 650px;font-size: 10px;">
+        <p>we have to make plan to be able to spend wisely</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
